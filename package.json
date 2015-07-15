@@ -1,0 +1,34 @@
+{
+  "name": "reading_view",
+  "description": "View web pages in a reading mode.",
+  "version": "0.0.1",
+  "keywords": [
+    "read ",
+    "view",
+    "parse",
+    "js"
+  ],
+  "maintainers": [
+    {
+      "name": "Artyom Fedenko",
+      "email": "artyomfedenko@hotmail.com",
+      "web": "mopso.by"
+    }
+  ],
+  "dependencies": {
+    "jsdom": "5.6.x",
+    "check-types": "3.0.x"
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git@github.com:Artie18/reading_view.git"
+    }
+  ],
+  "licenses": [
+    {
+      "name": "Mozilla Public License Version 2.0",
+      "url": "https://www.mozilla.org/MPL/2.0/"
+    }
+  ]
+}
