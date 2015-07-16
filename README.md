@@ -1,6 +1,8 @@
 # Reading View(reading_view)
 _View web pages in a reading mode._
 
+[![NPM](https://nodei.co/npm/reading_view.png)](https://nodei.co/npm/reading_view/)
+
 ## Desciption 
 
 io.js module for generating customisable easy to read html on the go. 
