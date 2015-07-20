@@ -11,6 +11,8 @@ This project can be found on NPM and installed through that.
 
 **Important:** Project is in development stage, so big changes could be made!
 
+**Example:** [readerview.mopso.co](http://readerview.mopso.co/demo/index)
+
 ## Installation
 
 `npm install reading_view`
