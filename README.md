@@ -19,7 +19,7 @@ This project can be found on NPM and installed through that.
 
 ## Current Version
 
-`0.1.0`
+`0.2.1`
 
 ## Using
 
