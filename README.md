@@ -3,11 +3,11 @@ _View web pages in a reading mode._
 
 [![NPM](https://nodei.co/npm/reading_view.png)](https://nodei.co/npm/reading_view/)
 
-## Desciption 
+## Desciption
 
-io.js module for generating customisable easy to read html on the go. 
+io.js module for generating customisable easy to read html on the go.
 
-This project can be found on NPM and installed through that. 
+This project can be found on NPM and installed through that.
 
 **Important:** Project is in development stage, so big changes could be made!
 
@@ -21,7 +21,7 @@ This project can be found on NPM and installed through that.
 
 `0.1.0`
 
-## Using 
+## Using
 
 #### Getting Started
 ```
@@ -30,28 +30,27 @@ var readingView = require('reading_view');
 readingView.convert(url, params, callback);
 ```
 
-#### Parametrs 
+#### Parametrs
 ###### Convert Function
 |Paramert|Description|
 |:-------|:-------|
 |url     |URL of web page to convert into reading view|
 |params  |Customisation Parametrs for convertation    |
 |callback|Function that is called when convertation is done, passes err - for errors, res - html string converted for reading|
-###### params in Convert Function 
+###### params in Convert Function
 {
 
   ⋅⋅**articleQuery**: _String_ | JQuery stiled query to find current article body | **default: article**
-  
+
   ⋅⋅**tagsToInclude**: _Array_ | Each element is a JQuery stiled query to fetch elements inside main article | **default: ['p','img']**
-  
+
   ⋅⋅**title**: {
-  
+
   ⋅⋅⋅⋅**textOnly**: _Boolean_ | Fetch only text from title without current tags | **default: false**
-  
+
   ⋅⋅⋅⋅**tagToWrap**: _String_ | Html tag name, that is wrapping title if *textOnly* is *true* | **default: h2**
 
   ⋅⋅⋅⋅**query**: _String_ | JQuery styled query to fetch header in article, if there are more than one, fetches first | **default: ${self.articleSelector} h${i}:first where i is Int from 1 to 6**
   }
 
 }
-
