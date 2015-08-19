@@ -21,7 +21,7 @@ describe('ReadingView', function() {
     links.forEach(function (link) {
       it('res(' + link + ') should be a String', function () {
         readingView.convert(link, {}, function (err, res) {
-          assert(typeof res === "string");
+          assert(typeof res === "string" && res.length > 0);
         });
       });
     });
