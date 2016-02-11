@@ -11,7 +11,7 @@ This project can be found on NPM and installed through that.
 
 **Important:** Project is in development stage, so big changes could be made!
 
-**Example:** [readerview.mopso.co](http://readerview.mopso.co/demo/index)
+**Example:** [readerview.mopso.co](http://readerview.mopso.co/demo/)
 
 ## Installation
 
@@ -32,25 +32,23 @@ readingView.convert(url, params, callback);
 
 #### Parametrs
 ###### Convert Function
-|Paramert|Description|
-|:-------|:-------|
-|url     |URL of web page to convert into reading view|
-|params  |Customisation Parametrs for convertation    |
-|callback|Function that is called when convertation is done, passes err - for errors, res - html string converted for reading|
-###### params in Convert Function
-{
+|Paramert|Description| Type | 
+|:-------|:-------|:-------|
+|url     |URL of web page to convert into reading view| Url | 
+|params  |Customisation Parametrs for convertation    | Object Params |
+|callback|Function that is called when convertation is done, passes err - for errors, res - html string converted for reading| Function|
 
-  ⋅⋅**articleQuery**: _String_ | JQuery stiled query to find current article body | **default: article**
+###### Params Object  in Convert Function
+|Paramert|Description| Type | Default |
+|:-------|:-------|:-------|:-------|
+| articleQuery | JQuery stiled query to find current article body |String  | article |
+| tagsToInclude | Each element is a JQuery stiled query to fetch elements inside main article | Array  | ['p','img'] |
+| title | Parametrs to define title configuration | Object Title | 
 
-  ⋅⋅**tagsToInclude**: _Array_ | Each element is a JQuery stiled query to fetch elements inside main article | **default: ['p','img']**
+###### Title Object 
+|Paramert|Description| Type | Default |
+|:-------|:-------|:-------|:-------|
+|textOnly| Fetch only text from title without current tags |Boolean  | false|
+|tagToWrap| Html tag name, that is wrapping title if *textOnly* is *true* |String|'h2'|
+|query| JQuery styled query to fetch header in article, if there are more than one, fetches first | String | "${self.articleSelector} h${i}:first" _where i is Int from 1 to 6_ |
 
-  ⋅⋅**title**: {
-
-  ⋅⋅⋅⋅**textOnly**: _Boolean_ | Fetch only text from title without current tags | **default: false**
-
-  ⋅⋅⋅⋅**tagToWrap**: _String_ | Html tag name, that is wrapping title if *textOnly* is *true* | **default: h2**
-
-  ⋅⋅⋅⋅**query**: _String_ | JQuery styled query to fetch header in article, if there are more than one, fetches first | **default: ${self.articleSelector} h${i}:first where i is Int from 1 to 6**
-  }
-
-}
