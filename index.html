@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Reading view by Artie18</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Reading view</h1>
+      <h2 class="project-tagline">View web pages in a reading mode. </h2>
+      <a href="https://github.com/Artie18/reading_view" class="btn">View on GitHub</a>
+      <a href="https://github.com/Artie18/reading_view/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Artie18/reading_view/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h2>
+<a id="desciption" class="anchor" href="#desciption" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Desciption</h2>
+
+<p>io.js module for generating customisable easy to read html on the go.</p>
+
+<p>This project can be found on NPM and installed through that.</p>
+
+<p><strong>Important:</strong> Project is in development stage, so big changes could be made!</p>
+
+<p><strong>Example:</strong> <a href="http://readerview.mopso.co/demo/">readerview.mopso.co</a></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p><code>npm install reading_view</code></p>
+
+<h2>
+<a id="current-version" class="anchor" href="#current-version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Current Version</h2>
+
+<p><code>0.2.1</code></p>
+
+<h2>
+<a id="using" class="anchor" href="#using" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using</h2>
+
+<h4>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Started</h4>
+
+<pre><code>var readingView = require('reading_view');
+
+readingView.convert(url, params, callback);
+</code></pre>
+
+<h4>
+<a id="parametrs" class="anchor" href="#parametrs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parametrs</h4>
+
+<h6>
+<a id="convert-function" class="anchor" href="#convert-function" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Convert Function</h6>
+
+<table>
+<thead>
+<tr>
+<th align="left">Paramert</th>
+<th align="left">Description</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">url</td>
+<td align="left">URL of web page to convert into reading view</td>
+<td align="left">Url</td>
+</tr>
+<tr>
+<td align="left">params</td>
+<td align="left">Customisation Parametrs for convertation</td>
+<td align="left">Object Params</td>
+</tr>
+<tr>
+<td align="left">callback</td>
+<td align="left">Function that is called when convertation is done, passes err - for errors, res - html string converted for reading</td>
+<td align="left">Function</td>
+</tr>
+</tbody>
+</table>
+
+<h6>
+<a id="params-object--in-convert-function" class="anchor" href="#params-object--in-convert-function" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Params Object  in Convert Function</h6>
+
+<table>
+<thead>
+<tr>
+<th align="left">Paramert</th>
+<th align="left">Description</th>
+<th align="left">Type</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">articleQuery</td>
+<td align="left">JQuery stiled query to find current article body</td>
+<td align="left">String</td>
+<td align="left">article</td>
+</tr>
+<tr>
+<td align="left">tagsToInclude</td>
+<td align="left">Each element is a JQuery stiled query to fetch elements inside main article</td>
+<td align="left">Array</td>
+<td align="left">['p','img']</td>
+</tr>
+<tr>
+<td align="left">title</td>
+<td align="left">Parametrs to define title configuration</td>
+<td align="left">Object Title</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+
+<h6>
+<a id="title-object" class="anchor" href="#title-object" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Title Object</h6>
+
+<table>
+<thead>
+<tr>
+<th align="left">Paramert</th>
+<th align="left">Description</th>
+<th align="left">Type</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">textOnly</td>
+<td align="left">Fetch only text from title without current tags</td>
+<td align="left">Boolean</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">tagToWrap</td>
+<td align="left">Html tag name, that is wrapping title if <em>textOnly</em> is <em>true</em>
+</td>
+<td align="left">String</td>
+<td align="left">'h2'</td>
+</tr>
+<tr>
+<td align="left">query</td>
+<td align="left">JQuery styled query to fetch header in article, if there are more than one, fetches first</td>
+<td align="left">String</td>
+<td align="left">"${self.articleSelector} h${i}:first" <em>where i is Int from 1 to 6</em>
+</td>
+</tr>
+</tbody>
+</table>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Artie18/reading_view">Reading view</a> is maintained by <a href="https://github.com/Artie18">Artie18</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
